@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<style>
+    #jin{
+        margin-left:40px;
+    }
+ 
+</style>
+<div class="container mt-5">
+  <div class="row">
+    {% for i in books %}
+    <div class="col-md-12 mb-4">
+      <div class="d-flex align-items-center">
+        <img src="{{ i.image.url }}" alt="pic not found" width="350" class="mr-3">
+        <div class="ml-3" id='jin'>
+          <h5><strong>Book title : </strong>{{ i.title }}</h5>
+          <p><strong>Author Name : </strong>{{ i.author }}</p>
+            <strong>Release Date : </strong>{{ i.release_date }}</p>
+          <p><strong>Rating : </strong>{{ i.rating }}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    
+  </div>
+</div>
+<center><a href="{% url 'index'%}" class="btn btn-success btn-lg" id='del'>Go To Home page</a></center>
+{% endblock content %}

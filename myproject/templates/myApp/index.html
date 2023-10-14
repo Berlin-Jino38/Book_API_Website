@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="row">
+    {% for i in authors %}
+    <div class="col-md-4 mb-4">
+      <div class="d-inline-block card" style="width: 18rem;">
+        <img src="{{ i.pic.url }}" class="card-img-top" alt="Pic is not available">
+        <div class="card-body">
+          <h5 class="card-title"><strong>AUTHOR NAME:</strong>{{ i.first_name }} </h5>
+          {% comment %} <p class="card-text"><strong>AUTHOR LNAME:</strong>{{ i.last_name }}</p> {% endcomment %}
+          <p class="card-text"><strong>SUBJECT :</strong>{{ i.subject }}</p>
+        
+          <a href="{% url 'book' i.first_name %}" class="btn btn-primary">PUBLISHED BOOKS</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}
