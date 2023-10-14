@@ -13,8 +13,6 @@ Implement pagination to efficiently navigate through large datasets.
 Search for authors and books by various criteria.
 Order and sort data for customized data presentation.
 
-The application will be accessible at http://localhost:8000.
-
 # API Endpoints:
 
 /api/author/: Retrieve a list of all authors or create a new author.
